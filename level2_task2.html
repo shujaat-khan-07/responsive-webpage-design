@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive Webpage with Hamburger Menu</title>
+  <style>
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: rgb(239, 215, 183);
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+  
+    header {
+      background-color: #333;
+      color: white;
+      padding: 20px 0;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 32px;
+      margin: 0;
+    }
+
+   
+    nav {
+      background-color: #444;
+    }
+
+    nav ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      justify-content: space-around;
+    }
+
+    nav ul li {
+      display: inline;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      padding: 14px 20px;
+      display: inline-block;
+    }
+
+    nav ul li a:hover {
+      background-color: #555;
+    }
+
+    .hamburger {
+      display: none;
+      cursor: pointer;
+      font-size: 30px;
+      padding: 15px;
+      color: white;
+      background-color: #444;
+    }
+
+   
+    .content {
+      padding: 20px;
+      text-align: center;
+    }
+
+    .content p {
+      font-size: 18px;
+      color: #555;
+      max-width: 800px;
+      margin: 20px auto;
+    }
+
+    /* Media Queries for Responsiveness */
+    /* Mobile screens (portrait) */
+    @media (max-width: 768px) {
+      nav ul {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        text-align: center;
+        padding: 0;
+      }
+
+      nav ul li {
+        display: block;
+        width: 100%;
+      }
+
+      .hamburger {
+        display: block;
+      }
+
+      nav.open ul {
+        display: flex;
+      }
+
+      nav ul li a {
+        padding: 12px;
+        font-size: 18px;
+      }
+    }
+
+    /* Tablet screens */
+    @media (max-width: 1024px) and (min-width: 769px) {
+      nav ul {
+        display: flex;
+        justify-content: space-between;
+      }
+
+      nav ul li {
+        display: inline-block;
+      }
+    }
+  </style>
+</head>
+<body>
+
+ 
+  <header>
+    <h1>Responsive Webpage with Hamburger Menu</h1>
+  </header>
+
+ 
+  <nav id="navbar">
+    <div class="hamburger" id="hamburger" onclick="toggleMenu()">&#9776;</div>
+    <ul id="nav-links">
+      <li><a href="#">Home</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Services</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </nav>
+
+ 
+  <div class="content">
+    <p>This is a simple webpage designed with responsive principles using CSS media queries. Resize your browser or open on a mobile device to see the responsive layout in action!</p>
+  </div>
+
+  <script>
+    // JavaScript to toggle the hamburger menu
+    function toggleMenu() {
+      const nav = document.getElementById('navbar');
+      nav.classList.toggle('open');
+    }
+  </script>
+
+</body>
+</html>
